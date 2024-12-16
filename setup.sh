@@ -18,7 +18,7 @@ EOF
 
 # Flatpak
 apt-get install flatpak -y
-sudo -u $username flatpak install flathub com.github.tchx84.Flatseal
+sudo -u $username flatpak install --assumeyes flathub com.github.tchx84.Flatseal
 
 # ES-DE
 apt-get install build-essential clang-format git cmake gettext libharfbuzz-dev libicu-dev libsdl2-dev libavcodec-dev libavfilter-dev libavformat-dev libavutil-dev libfreeimage-dev libfreetype6-dev libgit2-dev libcurl4-openssl-dev libpugixml-dev libasound2-dev libgl1-mesa-dev libpoppler-cpp-dev -y
@@ -38,11 +38,11 @@ cd ..
 
 # Emulators
 apt-get install retroarch -y
-sudo -u $username flatpak install flathub org.ppsspp.PPSSPP
-sudo -u $username flatpak install flathub org.duckstation.DuckStation
-sudo -u $username flatpak install flathub org.DolphinEmu.dolphin-emu
-sudo -u $username flatpak install flathub org.ryujinx.Ryujinx
-sudo -u $username flatpak install flathub org.mamedev.MAME
+sudo -u $username flatpak install --assumeyes flathub org.ppsspp.PPSSPP
+sudo -u $username flatpak install --assumeyes flathub org.duckstation.DuckStation
+sudo -u $username flatpak install --assumeyes flathub org.DolphinEmu.dolphin-emu
+sudo -u $username flatpak install --assumeyes flathub org.ryujinx.Ryujinx
+sudo -u $username flatpak install --assumeyes flathub org.mamedev.MAME
 
 # Fan controls - does not work yet
 # git clone https://github.com/Luxvao/rp5-fan-control
