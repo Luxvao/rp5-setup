@@ -1,23 +1,36 @@
 #!/bin/bash
 
+# Set this to YOUR USERNAME
 username=""
 
 # Upgrade
 apt-get update
-apt-get upgrade
+apt-get upgrade -y
 
-# Install DE
-apt-get install plasma-mobile plasma-mobile-tweaks sddm konsole -y
+# Install DE & drivers
+apt-get install cage sddm konsole meta-utils vulkan-tools mesa-vulkan-drivers -y
 
 # SDDM setup
 cat <<EOF >> /etc/sddm.conf
 [Autologin]
 User=$username
-Session=plasma-mobile
+Session=es-de
+EOF
+
+# ES-DE + Cage setup
+cat <<EOF >> /usr/share/wayland-sessions/es-de.desktop
+[Desktop Entry]
+Name=Emulationstation Desktop Edition
+Comment=Starts ES-DE in the Cage wayland compositor
+Exec=/usr/bin/cage -r /usr/bin/es-de
+Type=Application
 EOF
 
 # Flatpak
 apt-get install flatpak -y
+
+sudo -u $username flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 sudo -u $username flatpak install --assumeyes flathub com.github.tchx84.Flatseal
 
 # ES-DE
@@ -43,6 +56,13 @@ sudo -u $username flatpak install --assumeyes flathub org.duckstation.DuckStatio
 sudo -u $username flatpak install --assumeyes flathub org.DolphinEmu.dolphin-emu
 sudo -u $username flatpak install --assumeyes flathub org.ryujinx.Ryujinx
 sudo -u $username flatpak install --assumeyes flathub org.mamedev.MAME
+
+# Portmaster
+wget https://github.com/PortsMaster/PortMaster-GUI/releases/download/2024.12.16-1112/Install.PortMaster.sh
+./Install.PortMaster.sh
+
+# Desktop files for emulators
+sudo -u $username ./setup_desktop_files.sh
 
 # Fan controls - does not work yet
 # git clone https://github.com/Luxvao/rp5-fan-control
