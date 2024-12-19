@@ -61,6 +61,9 @@ sudo -u $username flatpak install --assumeyes flathub org.mamedev.MAME
 wget https://github.com/PortsMaster/PortMaster-GUI/releases/download/2024.12.16-1112/Install.PortMaster.sh
 ./Install.PortMaster.sh
 
+# Steam & box86 & box64
+./box86_64_steam.sh
+
 # Desktop files for emulators
 sudo -u $username ./setup_desktop_files.sh
 
