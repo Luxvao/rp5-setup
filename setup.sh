@@ -8,7 +8,7 @@ apt-get update
 apt-get upgrade -y
 
 # Install DE & drivers
-apt-get install cage sddm konsole meta-utils vulkan-tools mesa-vulkan-drivers -y
+apt-get install cage sddm konsole mesa-utils vulkan-tools mesa-vulkan-drivers -y
 
 # SDDM setup
 cat <<EOF >> /etc/sddm.conf

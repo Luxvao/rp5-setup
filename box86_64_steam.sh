@@ -54,8 +54,8 @@ Suites: ./
 Signed-By: /usr/share/keyrings/box64-archive-keyring.gpg" | sudo tee /etc/apt/sources.list.d/box64.sources >/dev/null
 
 # Actually install it
-apt update
-apt install box64-generic-arm -y
+apt-get update
+apt-get install box64-generic-arm -y
 
 
 
