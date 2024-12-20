@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Stop fan
+echo 30 > /sys/class/hwmon/hwmon0/pwm1
+
 # Create a systemd service that silences the fan
 cat <<EOF >> /etc/systemd/system/fan.service
 [Unit]
