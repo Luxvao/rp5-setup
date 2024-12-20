@@ -18,6 +18,8 @@ Session=es-de
 EOF
 
 # ES-DE + Cage setup
+mkdir /usr/share/wayland-sessions/
+
 cat <<EOF >> /usr/share/wayland-sessions/es-de.desktop
 [Desktop Entry]
 Name=Emulationstation Desktop Edition
