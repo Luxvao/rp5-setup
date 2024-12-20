@@ -28,6 +28,9 @@ Exec=/usr/bin/es-de --screenrotate 270 --force-input-config /esde_input.xml
 Type=Application
 EOF
 
+# Write the es-de input configuration to /esde_input.xml
+./map_controller_esde.sh
+
 # Flatpak
 apt-get install flatpak -y
 
