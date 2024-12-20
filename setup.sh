@@ -8,7 +8,7 @@ apt-get update
 apt-get upgrade -y
 
 # Install DE & drivers
-apt-get install cage sddm konsole mesa-utils vulkan-tools mesa-vulkan-drivers -y
+apt-get install sddm konsole mesa-utils vulkan-tools mesa-vulkan-drivers -y
 
 # SDDM setup
 cat <<EOF >> /etc/sddm.conf
@@ -23,8 +23,8 @@ mkdir /usr/share/wayland-sessions/
 cat <<EOF >> /usr/share/wayland-sessions/es-de.desktop
 [Desktop Entry]
 Name=Emulationstation Desktop Edition
-Comment=Starts ES-DE in the Cage wayland compositor
-Exec=/usr/bin/cage -r /usr/bin/es-de
+Comment=Starts ES-DE
+Exec=/usr/bin/es-de
 Type=Application
 EOF
 
