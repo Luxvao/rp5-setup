@@ -24,7 +24,7 @@ Signed-By: /usr/share/keyrings/box86-archive-keyring.gpg" | sudo tee /etc/apt/so
 # Actually install it
 dpkg --add-architecture armhf
 apt-get update
-apt-get install libc6:armhf -y
+apt-get install libc6:armhf libz-dev:armhf libpng-dev:armhf libssl-dev:armhf libcurl4-openssl-dev:armhf -y
 apt-get install box86-generic-arm:armhf -y
 
 
