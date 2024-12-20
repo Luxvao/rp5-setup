@@ -17,14 +17,14 @@ User=$username
 Session=es-de
 EOF
 
-# ES-DE + Cage setup
+# ES-DE setup 
 mkdir /usr/share/wayland-sessions/
 
 cat <<EOF >> /usr/share/wayland-sessions/es-de.desktop
 [Desktop Entry]
-Name=Emulationstation Desktop Edition
+Name=ES-DE
 Comment=Starts ES-DE
-Exec=/usr/bin/es-de
+Exec=/usr/bin/es-de --screenrotate 270 --force-input-config /esde_input.xml
 Type=Application
 EOF
 
