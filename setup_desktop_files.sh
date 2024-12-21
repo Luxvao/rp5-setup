@@ -7,7 +7,7 @@ mkdir ~/ROMs
 mkdir ~/ROMs/desktop
 
 # Retroarch
-cat <<EOF >> ~/ROMs/desktop/RetroArch.desktop
+cat <<EOF > ~/ROMs/desktop/RetroArch.desktop
 [Desktop Entry]
 Name=RetroArch
 Comment=Launches RetroArch
@@ -18,7 +18,7 @@ EOF
 chmod +x ~/ROMs/desktop/RetroArch.desktop
 
 # PPSSPP
-cat <<EOF >> ~/ROMs/desktop/PPSSPP.desktop
+cat <<EOF > ~/ROMs/desktop/PPSSPP.desktop
 [Desktop Entry]
 Name=PPSSPP
 Comment=Launches PPSSPP
@@ -29,7 +29,7 @@ EOF
 chmod +x ~/ROMs/desktop/PPSSPP.desktop
 
 # Dolphin
-cat <<EOF >> ~/ROMs/desktop/Dolphin.desktop
+cat <<EOF > ~/ROMs/desktop/Dolphin.desktop
 [Desktop Entry]
 Name=Dolphin
 Comment=Launches Dolphin
@@ -40,7 +40,7 @@ EOF
 chmod +x ~/ROMs/desktop/Dolphin.desktop
 
 # Duckstation
-cat <<EOF >> ~/ROMs/desktop/Duckstation.desktop
+cat <<EOF > ~/ROMs/desktop/Duckstation.desktop
 [Desktop Entry]
 Name=Duckstation
 Comment=Launches Duckstation

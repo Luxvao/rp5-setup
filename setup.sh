@@ -11,7 +11,7 @@ apt-get upgrade -y
 apt-get install sddm konsole mesa-utils vulkan-tools mesa-vulkan-drivers -y
 
 # SDDM setup
-cat <<EOF >> /etc/sddm.conf
+cat <<EOF > /etc/sddm.conf
 [Autologin]
 User=$username
 Session=es-de
@@ -20,7 +20,7 @@ EOF
 # ES-DE setup 
 mkdir /usr/share/wayland-sessions/
 
-cat <<EOF >> /usr/share/wayland-sessions/es-de.desktop
+cat <<EOF > /usr/share/wayland-sessions/es-de.desktop
 [Desktop Entry]
 Name=ES-DE
 Comment=Starts ES-DE
@@ -29,12 +29,12 @@ Type=Application
 EOF
 
 # Write the es-de input configuration to /esde_input.xml
-source ./map_controller_esde.sh
+sudo -u $username ./map_controller_esde.sh
 
 # Flatpak
 apt-get install flatpak -y
 
-sudo -u $username flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 sudo -u $username flatpak install --assumeyes flathub com.github.tchx84.Flatseal
 
@@ -63,8 +63,20 @@ sudo -u $username flatpak install --assumeyes flathub org.ryujinx.Ryujinx
 sudo -u $username flatpak install --assumeyes flathub org.mamedev.MAME
 
 # Portmaster
+mkdir /roms
+mkdir /roms/ports
+
+prev_path=`pwd`
+
+cd /roms/ports/
+
 wget https://github.com/PortsMaster/PortMaster-GUI/releases/download/2024.12.16-1112/Install.PortMaster.sh
+
+chmod +x Install.PortMaster.sh
+
 ./Install.PortMaster.sh
+
+cd $prev_path
 
 # Steam & box86 & box64
 ./box86_64_steam.sh

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat <<EOF >> /esde_input.xml
+cat <<EOF > 
 <?xml version="1.0"?>
 <inputList>
 	<inputConfig type="controller" deviceName="Retroid Pocket Controller" deviceGUID="03008149202000000130000001000000">
