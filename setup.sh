@@ -29,7 +29,7 @@ Type=Application
 EOF
 
 # Write the es-de input configuration to /esde_input.xml
-./map_controller_esde.sh
+source ./map_controller_esde.sh
 
 # Flatpak
 apt-get install flatpak -y
@@ -55,7 +55,7 @@ make install
 cd ..
 
 # Emulators
-apt-get install retroarch -y
+sudo -u $username flatpak install --assumeyes flathub org.libretro.RetroArch
 sudo -u $username flatpak install --assumeyes flathub org.ppsspp.PPSSPP
 sudo -u $username flatpak install --assumeyes flathub org.duckstation.DuckStation
 sudo -u $username flatpak install --assumeyes flathub org.DolphinEmu.dolphin-emu

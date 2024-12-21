@@ -31,3 +31,5 @@ cat <<EOF >> /esde_input.xml
 	</inputConfig>
 </inputList>
 EOF
+
+chown $username /esde_input.xml

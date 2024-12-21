@@ -7,13 +7,15 @@ mkdir ~/ROMs
 mkdir ~/ROMs/desktop
 
 # Retroarch
-cat <<EOF >> ~/ROMs/desktop/Retroarch.desktop
+cat <<EOF >> ~/ROMs/desktop/RetroArch.desktop
 [Desktop Entry]
-Name=Retroarch
-Comment=Launches Retroarch
-Exec=retroarch -f
+Name=RetroArch
+Comment=Launches RetroArch
+Exec=flatpak run org.libretro.RetroArch
 Type=Application
 EOF
+
+chmod +x ~/ROMs/desktop/RetroArch.desktop
 
 # PPSSPP
 cat <<EOF >> ~/ROMs/desktop/PPSSPP.desktop
@@ -24,6 +26,8 @@ Exec=flatpak run org.ppsspp.PPSSPP
 Type=Application
 EOF
 
+chmod +x ~/ROMs/desktop/PPSSPP.desktop
+
 # Dolphin
 cat <<EOF >> ~/ROMs/desktop/Dolphin.desktop
 [Desktop Entry]
@@ -33,6 +37,8 @@ Exec=flatpak run org.DolphinEmu.dolphin-emu
 Type=Application
 EOF
 
+chmod +x ~/ROMs/desktop/Dolphin.desktop
+
 # Duckstation
 cat <<EOF >> ~/ROMs/desktop/Duckstation.desktop
 [Desktop Entry]
@@ -41,3 +47,5 @@ Comment=Launches Duckstation
 Exec=flatpak run org.duckstation.DuckStation
 Type=Application
 EOF
+
+chmod +x ~/ROMs/desktop/Duckstation.desktop
